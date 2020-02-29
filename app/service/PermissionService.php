@@ -74,30 +74,28 @@ class PermissionService extends BaseService
 
         if (! empty($input['permission'])) {
             $input['permission'] = implode(',', $input['permission']);
+        } else {
+            $input['permission'] = '';
         }
 
         return $rule->save($input);
     }
 
     /**
-     * 获取顶级.
+     * 获取菜单与子操作结构.
      */
     public function getMenuPermission()
     {
-        $menus = $this->model->where('type', 'menu')->select();
         $actions = $this->model->where('type', 'action')->select();
-
+        $menusIds = $this->model->where('type', 'action')->column('pid');
+        $menus = $this->model->whereIn('id', $menusIds)->select();
         $category = new \extend\Category();
+
         foreach ($menus as $menu) {
             $menu->actions = $category->getChild($menu->id, $actions);
         }
-        return $menus;
-        // foreach ($menu as $permission) {
-        //     $permission->actions = $this->getActions($permission);
-        //     $permission->selected = [];
-        // }
 
-        return $menu;
+        return $menus;
     }
 
     /**
