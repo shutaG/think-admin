@@ -6,6 +6,7 @@ declare(strict_types=1);
 namespace app\blog\controller;
 
 use app\service\BlogArticleService;
+use app\blog\request\ArticleRequest;
 use app\BaseController;
 
 class Api extends BaseController
@@ -24,6 +25,37 @@ class Api extends BaseController
         // $data = $this->log->getList((int) $pageNo, (int) $pageSize);
         return $this->sendSuccess($data);
     }
+
+    public function add(ArticleRequest $request)
+    {
+        $request->scene('create')->validate();
+        if ($this->service->add($request->param()) === false) {
+            return $this->sendError();
+        }
+
+        return $this->sendSuccess();
+    }
+
+    public function  update($id, ArticleRequest $request)
+    {
+        $request->scene('update')->validate();
+        $params = $request->param();
+        if ($this->service->renew($id, $params ) === false) {
+            return $this->sendError();
+        }
+
+        return $this->sendSuccess();
+    }
+
+    public function delete($id)
+    {
+        if ($this->service->remove($id) === false) {
+            return $this->sendError();
+        }
+
+        return $this->sendSuccess();
+    }
+
 
     public function index()
     {
