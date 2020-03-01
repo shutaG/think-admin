@@ -14,9 +14,8 @@ declare(strict_types=1);
 namespace app\model;
 
 use app\BaseModel;
-use app\traits\Log;
 
-class Dept extends BaseModel
+class DataBaseLog extends BaseModel
 {
-    protected $pk = 'dept_id';
+    protected $table = 'db_log';
 }

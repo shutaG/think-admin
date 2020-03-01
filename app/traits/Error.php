@@ -11,12 +11,14 @@ declare(strict_types=1);
  * @license  https://github.com/edenleung/think-admin/blob/6.0/LICENSE.txt
  */
 
-namespace app\model;
+namespace app\traits;
 
-use app\BaseModel;
-use app\traits\Log;
-
-class Dept extends BaseModel
+trait Error
 {
-    protected $pk = 'dept_id';
+    protected $error;
+
+    public function getError()
+    {
+        return $this->error;
+    }
 }

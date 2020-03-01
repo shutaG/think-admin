@@ -11,12 +11,9 @@ declare(strict_types=1);
  * @license  https://github.com/edenleung/think-admin/blob/6.0/LICENSE.txt
  */
 
-namespace app\model;
+ namespace Tant;
 
-use app\BaseModel;
-use app\traits\Log;
-
-class Dept extends BaseModel
-{
-    protected $pk = 'dept_id';
-}
+ class TAnt
+ {
+     const VERSION = '0.8.0';
+ }
