@@ -14,6 +14,13 @@ namespace think;
 
 require __DIR__ . '/../vendor/autoload.php';
 
+if($_SERVER['REQUEST_METHOD'] == 'OPTIONS'){
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    header('Access-Control-Allow-Methods: GET, POST, PUT,DELETE,OPTIONS,PATCH');
+    exit();
+}
+header("Access-Control-Allow-Origin: *");
 // 执行HTTP应用并响应
 $http = (new App())->http;
 

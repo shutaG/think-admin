@@ -27,4 +27,5 @@ class DeptRequest extends BaseRequest
         'dept_name.require' => '名称必须',
         'dept_name.unique' => '规则重复',
     ];
+
 }

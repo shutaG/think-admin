@@ -87,6 +87,14 @@ Route::group('/system', function () {
     Route::rule('/post/:id', 'system.post/delete', 'DELETE')->middleware(Permission::class, 'PostDelete');
 })->allowCrossDomain()->middleware(Jwt::class);
 
+// 博客
+Route::group('/blog', function () {
+    Route::rule('/list', '/admin/blog/list', 'GET');
+    Route::rule('/detail', '/admin/blog/detail', 'GET');
+    Route::rule('/workplace/radar', 'mock/radar', 'GET');
+    Route::rule('/workplace/teams', 'mock/teams', 'GET');
+})->allowCrossDomain();
+
 // 模拟数据（可删除）
 Route::group('/mock', function () {
     Route::rule('/list/search/projects', 'mock/projects', 'GET');

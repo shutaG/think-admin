@@ -15,6 +15,8 @@ namespace app\service;
 
 use app\BaseService;
 use app\model\BlogArticle;
+use think\facade\Db;
+
 
 class BlogArticleService extends BaseService
 {
@@ -23,5 +25,9 @@ class BlogArticleService extends BaseService
         $this->model = $blogArticle;
     }
 
-
+    // public function paginate($pageNo = 1, $pageSize = 10)
+    // {
+    // 	$data = Db::table('blog_article')->page($pageNo,$pageSize)->select(); 
+    // 	return $data;
+    // }
 }
