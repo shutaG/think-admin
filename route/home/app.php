@@ -13,4 +13,5 @@ declare(strict_types=1);
 
 use think\facade\Route;
 
-Route::get('/think', 'index/hello');
+
+Route::get('/detail/:id', '/home/index/detail');

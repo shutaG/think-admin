@@ -8,6 +8,7 @@ namespace app\admin\controller;
 use app\service\BlogArticleService;
 use app\blog\request\ArticleRequest;
 use app\BaseController;
+use app\blog\controller\Upload;
 
 class Blog extends BaseController
 {   
@@ -67,5 +68,14 @@ class Blog extends BaseController
 
         return $this->sendSuccess();
     }
+
+    public function upload(){
+        $image = $_FILES['image'];
+        $upload = new Upload($image);
+        $url = $upload -> movefile();
+        $res['name'] = $url;
+        $res['src'] = '/upload/'.$url;
+        return $this->sendSuccess($res);
+    }  
 
 }

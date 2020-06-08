@@ -8,6 +8,7 @@ namespace app\blog\controller;
 use app\service\BlogArticleService;
 use app\blog\request\ArticleRequest;
 use app\BaseController;
+use app\blog\controller\Upload;
 
 class Api extends BaseController
 {   
@@ -20,7 +21,8 @@ class Api extends BaseController
      * 
      */
     public function  list()
-    {
+    {   
+        echo 1;
         $data = $this->service->paginate(3);
         // $data = $this->log->getList((int) $pageNo, (int) $pageSize);
         return $this->sendSuccess($data);
@@ -56,6 +58,11 @@ class Api extends BaseController
         return $this->sendSuccess();
     }
 
+    public function upload(){
+        $image = $_FILES['image'];
+        $upload = new EUpload($image);
+        $url = $upload -> movefile();
+    }   
 
     public function index()
     {

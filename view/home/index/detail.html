@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ch">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/static/blog/index.css">
+	<link rel="stylesheet" href="/static/blog/base.css">
+	<link rel="stylesheet" href="/static/blog/common.css">
+</head>
+
+<body>
+	<div class="top-bg"></div>
+	<div class="header text-center bg-black c-white">
+		<h1><a href="/">刘刚刚的个人博客</a></h1>
+	</div>
+	<div class="container flex">
+		<div class="c-left">
+			<div class="article-list bg-white left-block">
+				<h2 class="text-center">{$detail['title']}</h2>
+				<hr>
+				<div class="article">
+					<div class="article-content flex-column">
+							{$html | raw} 
+					</div>		
+				</div>
+			</div>
+
+		</div>
+		<div class="c-right">
+			<div class="c-r-box myinfo">
+				<div class="myinfo-title">
+					我的名片
+				</div>
+				<div class="myinfo-detail">
+					<p>昵称：shuta</p>
+					<p>职业：后台开发(php)</p>
+					<p>邮箱：648949076@qq.com</p>
+				</div>
+			</div>
+			<div class="c-r-box mysite bg-white">
+				<div class="mysite-title">
+					站点信息
+				</div>
+				<hr bg-gray>
+				<div class="mysite-detail">
+					<div>
+						<strong>建站时间：</strong>
+						<span class="c-gray">2020/2/19</span>
+					</div>
+					<div>
+						<strong>网站程序：</strong>
+						<span class="c-gray">ANTD PRO VUE + TP6.0</span>
+					</div>
+					<div>
+						<strong id = "day"class="c-gray"></strong>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<style type="text/css">
+
+
+	.article{
+		padding-top: 20px;
+		min-height: 280px;
+		width:98%;
+		margin:0 auto;
+	}
+</style>
+<script>
+	    window.onload = function(){
+			let startTime = new Date('2020-2-18'); // 开始时间
+			let endTime = new Date(); // 结束时间
+			let day = Math.floor((endTime - startTime) / 1000 / 60 / 60 / 24);
+			document.getElementById("day").innerHTML ="站点已运行"+day+"天";
+		}
+		
+</script>
+</html>

@@ -10,3 +10,9 @@ declare(strict_types=1);
  * @copyright 2019 Eden Leung
  * @license  https://github.com/edenleung/think-admin/blob/6.0/LICENSE.txt
  */
+use think\facade\Route;
+
+
+// Route::get('/detail/:id', 'home/index/index');
+// Route::get('detail/:id','\app\home\index\detail');
+// Route::redirect('blog/:id', 'http://blog.thinkphp.cn/read/:id', 302);

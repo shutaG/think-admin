@@ -26,6 +26,7 @@ return [
     // 是否启用事件
     'with_event' => true,
     // 默认应用
+    'app_express' => true,
     'default_app' => 'home',
     // 默认时区
     'default_timezone' => 'Asia/Shanghai',

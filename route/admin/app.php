@@ -91,8 +91,9 @@ Route::group('/system', function () {
 Route::group('/blog', function () {
     Route::rule('/list', '/admin/blog/list', 'GET');
     Route::rule('/detail', '/admin/blog/detail', 'GET');
-    Route::rule('/workplace/radar', 'mock/radar', 'GET');
-    Route::rule('/workplace/teams', 'mock/teams', 'GET');
+    Route::rule('/add', '/admin/blog/add', 'POST');
+    Route::rule('/update', '/admin/blog/update', 'POST');
+    Route::rule('/upload', '/admin/blog/upload', 'POST');
 })->allowCrossDomain();
 
 // 模拟数据（可删除）

@@ -28,7 +28,7 @@ abstract class BaseService
 
     public function paginate($limit)
     {
-        return $this->model->paginate($limit);
+        return $this->model->order('update_time desc')->paginate($limit);
     }
 
     public function add(array $input)
