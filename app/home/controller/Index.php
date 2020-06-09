@@ -21,7 +21,7 @@ class Index
     public function index()
     {	
     	$list = BlogArticle::order('update_time desc')->select();
-    	dump($list->toArray());
+    	// dump($list->toArray());
     	View::assign('list',$list);
         return View::fetch();
     }
