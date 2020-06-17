@@ -1,0 +1,107 @@
+.c-left {
+    width: 900px;
+    margin-top: 20px;
+}
+
+.left-block {
+    width: 860px;
+    padding: 20px;
+}
+.article{
+    margin:10px 0;
+}
+h3{ 
+    padding-top: 10px;
+    padding-bottom:15px;
+    color:rgb(35,166,213)
+}
+
+.article-box{
+    justify-content: space-between;
+}
+
+.article-left {
+    width: 200px;
+    height: 160px;
+    padding:10px;
+    /* border:1px solid rgba(200,200,200,0.5) */
+    box-shadow: 0px 0px  5px rgba(220,220,220,0.8);
+}
+.article-img{
+    width: 200px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.article-right{
+    width: 620px;
+    height: 180px;
+    justify-content: space-between;
+}
+
+.introduce{
+    padding-top: 5px;
+    line-height: 1.6rem;
+    color:rgb(100,100,100)
+}
+.article-list>h2 {
+    font-weight: normal;
+    font-size: 1.3rem;
+    padding-bottom: 3px;
+}
+.more{
+    justify-content: space-between;
+    align-items: center;
+}
+.info > img{
+    width:30px;
+    height:30px;
+    padding:2px;
+    border-radius: 20px;
+    border:2px solid green;
+    margin-right: 10px;
+}
+.info{
+    align-items: center;
+}
+.detail{
+    padding:5px 10px;
+    background: rgb(18,183,222);
+    color:white;
+}
+.c-right {
+    width: 260px;
+    padding:20px 10px;
+}
+.myinfo{
+    padding:20px;
+    background-color: rgba(42,42,42,1);
+    box-shadow: 1px -1px 5px rgb(150,150,150);
+}
+.myinfo-title{
+    color:rgb(140,140,140);
+    font-size: 1.4rem;
+}
+.myinfo-detail{
+    margin-top: 10px;
+    padding-left: 10px;
+}
+.myinfo-detail>p{
+    line-height: 1.6rem;
+    color:rgb(210,210,210)
+}
+
+.mysite{
+    padding:20px;
+}
+.mysite-title{
+    font-size: 1.4rem;
+}
+.mysite-detail{
+    margin-top: 10px;
+}
+.mysite-detail > div{
+    margin-bottom: 6px;
+    line-height: 1.5rem;
+}

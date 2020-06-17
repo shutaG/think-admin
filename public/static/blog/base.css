@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+    background: rgb(233, 233, 233);
+}
+
+.flex {
+    display: flex;
+}
+.flex-column{
+    display:flex;
+    flex-direction: column;
+}
+.c-gray{
+    color:rgb(100,100,100)
+}
+.c-white {
+    color: white;
+}
+
+.bg-white {
+    background: white;
+}
+
+.bg-black {
+    background: rgb(28, 35, 39);
+}
+
+.text-center {
+    text-align: center;
+}
