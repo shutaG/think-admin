@@ -2,6 +2,16 @@
 <html lang="ch">
 
 <head>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?7736a1422368b4c8db26825fc6b02c4c";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+		
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>刘刚刚的个人博客</title>
@@ -35,7 +45,7 @@
 									<img src="/static/blog/jitui.png" alt="">
 									<span class="c-gray">{$vo['create_time']}</span>
 								</div>
-								<div class="detail"><a href="detail/{$vo['id']}">阅读内容</a></div>
+								<div class="detail" title="{$vo['title']}"><a href="detail/{$vo['id']}">阅读内容</a></div>
 							</div>
 						</div>
 					</div>
