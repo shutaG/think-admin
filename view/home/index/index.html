@@ -13,7 +13,7 @@
 	</script>
 		
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="initial-scale=1.0">
 	<title>刘刚刚的个人博客</title>
 	<link rel="stylesheet" href="/static/blog/index.css">
 	<link rel="stylesheet" href="/static/blog/base.css">
@@ -31,7 +31,7 @@
 				<h2><a href="/">最新博文</a></h2>
 				<hr>
 				{foreach  $list as $key=>$vo}
-					<a href=""><h3>{$vo['title']}</h3></a>
+					<a href="/detail/{$vo['id']}"><h3>{$vo['title']}</h3></a>
 					<div class="flex article-box">
 						<div class="article-left" >
 							<div class="article-img" style="background-image: url(/upload/{$vo['image']})"></div>
@@ -45,12 +45,12 @@
 									<img src="/static/blog/jitui.png" alt="">
 									<span class="c-gray">{$vo['create_time']}</span>
 								</div>
-								<div class="detail" title="{$vo['title']}"><a href="detail/{$vo['id']}">阅读内容</a></div>
+								<div class="detail" title="{$vo['title']}"><a href="/detail/{$vo['id']}">阅读内容</a></div>
 							</div>
 						</div>
 					</div>
 				{/foreach}
-				<div class="article">
+				<!-- <div class="article">
 					<h3>作为一名设计师,能否恪守自己的原则？</h3>
 					<div class="flex article-box">
 						<div class="article-left" >
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 
 		</div>
@@ -105,6 +105,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="text-center beian"><a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action" target="_blank">晋ICP备18007778号</a></div>
 
 </body>
 <script>
