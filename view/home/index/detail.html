@@ -12,8 +12,11 @@
 		})();
 	</script>
 	<meta charset="UTF-8">
-	<meta name="viewport" content=" initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{$detail['title']}-刘刚刚的博客</title>
+	<meta name="keywords" content="{$detail['title']}">
+	<meta name="description" content="{$detail['introduce']}">
+	<meta name="copyright" content="shaoer.cloud版权所有">
 	<link rel="stylesheet" href="/static/blog/index.css">
 	<link rel="stylesheet" href="/static/blog/base.css">
 	<link rel="stylesheet" href="/static/blog/common.css">
@@ -23,7 +26,7 @@
 <body>
 	<div class="top-bg"></div>
 	<div class="header text-center bg-black c-white">
-		<h1><a href="/">刘刚刚的个人博客</a></h1>
+		<div><a href="/">刘刚刚的个人博客</a></div>
 	</div>
 	<div class="container flex">
 		<div class="c-left">
@@ -32,6 +35,8 @@
 				<hr>
 				<div class="article markdown-body">
 					<div class="article-content flex-column">
+						<i>{$detail['introduce']}</i>
+						<hr>
 							{$html | raw} 
 					</div>		
 				</div>
@@ -70,7 +75,12 @@
 			</div>
 		</div>
 	</div>
-	<div class="text-center beian"><a href="http://beian.miit.gov.cn/state/outPortal/loginPortal.action" target="_blank">晋ICP备18007778号</a></div>
+	<div class="text-center beian">
+		<div>
+			<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">晋ICP备18007778号</a>
+		</div>
+		<div id="copyright">©2020-2020 shaoer.cloud</div>
+	</div>
 </body>
 <style type="text/css">
 

@@ -13,11 +13,13 @@
 	</script>
 		
 	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,
+    width=device-width,initial-scale=1.0" />
+	<!-- <meta name="viewport" content="initial-scale=1.0"> -->
 	<title>刘刚刚的个人博客</title>
-	<link rel="stylesheet" href="/static/blog/index.css">
-	<link rel="stylesheet" href="/static/blog/base.css">
-	<link rel="stylesheet" href="/static/blog/common.css">
+	<link rel="stylesheet" href="/static/blog/mobile/index.css">
+	<link rel="stylesheet" href="/static/blog/mobile/base.css">
+	<link rel="stylesheet" href="/static/blog/mobile/common.css">
 </head>
 
 <body>
@@ -25,10 +27,10 @@
 	<div class="header text-center bg-black c-white">
 		<h1>刘刚刚的个人博客</h1>
 	</div>
-	<div class="container flex">
+	<div class="container">
 		<div class="c-left">
 			<div class="article-list bg-white left-block">
-				<h2><a href="/">最新博文</a></h2>
+				<h2>最新发表</h2>
 				<hr>
 				{foreach  $list as $key=>$vo}
 					<a href="/detail/{$vo['id']}.html"><h3>{$vo['title']}</h3></a>
@@ -40,7 +42,7 @@
 							<div class="introduce ">
 								{$vo['introduce']}
 							</div>
-							<div class="more flex">
+							<div class="more">
 								<div class="info flex">
 									<img src="/static/blog/jitui.png" alt="">
 									<span class="c-gray">{$vo['create_time']}</span>
@@ -49,9 +51,9 @@
 							</div>
 						</div>
 					</div>
+					<div class="hr"></div>
 				{/foreach}
 			</div>
-
 		</div>
 		<div class="c-right">
 			<div class="c-r-box myinfo">
@@ -60,7 +62,7 @@
 				</div>
 				<div class="myinfo-detail">
 					<p>昵称：shuta</p>
-					<p>职业：后台开发(php)</p>
+					<p>职业：后台开发(php、python)</p>
 					<p>邮箱：648949076@qq.com</p>
 				</div>
 			</div>
@@ -94,12 +96,11 @@
 
 </body>
 <script>
-	    window.onload = function(){
-			let startTime = new Date('2020-2-18'); // 开始时间
-			let endTime = new Date(); // 结束时间
-			let day = Math.floor((endTime - startTime) / 1000 / 60 / 60 / 24);
-			document.getElementById("day").innerHTML ="站点已运行"+day+"天";
-		}
-		
+	window.onload = function(){
+		let startTime = new Date('2020-2-18'); // 开始时间
+		let endTime = new Date(); // 结束时间
+		let day = Math.floor((endTime - startTime) / 1000 / 60 / 60 / 24);
+		document.getElementById("day").innerHTML ="站点已运行"+day+"天";
+	}
 </script>
 </html>

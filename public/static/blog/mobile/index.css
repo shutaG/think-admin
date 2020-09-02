@@ -1,13 +1,11 @@
 .c-left {
-    width: 900px;
+    /* width: 900px; */
     margin-top: 20px;
 }
 
 .left-block {
-    width: 860px;
-    padding: 20px;
-    margin-bottom: 10px;
-    min-height: calc(100vh - 164px);
+    width: 95%;
+    padding: 2.5%;
 }
 .article{
     margin:10px 0;
@@ -20,25 +18,32 @@ h3{
 
 .article-box{
     justify-content: space-between;
+    margin-bottom: 10px;
+    
+}
+
+.hr{
+    background:rgb(230,230,230) ;
+    height:2px;
 }
 
 .article-left {
-    width: 200px;
-    height: 160px;
+    width: 33%;
+    height: 33vw;
     padding:10px;
     /* border:1px solid rgba(200,200,200,0.5) */
     box-shadow: 0px 0px  5px rgba(220,220,220,0.8);
 }
 .article-img{
-    width: 200px;
-    height: 160px;
+    width: 100%;   
+    height: 30vw;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 .article-right{
-    width: 620px;
-    height: 180px;
+    width: 60%;
+    /* height: 180px; */
     justify-content: space-between;
 }
 
@@ -57,8 +62,8 @@ h3{
     align-items: center;
 }
 .info > img{
-    width:30px;
-    height:30px;
+    width:20px;
+    height:20px;
     padding:2px;
     border-radius: 20px;
     border:2px solid green;
@@ -68,16 +73,22 @@ h3{
     align-items: center;
 }
 .detail{
-    padding:5px 10px;
+    padding:2px 8px;
+    margin:5px 10px;
     background: rgb(18,183,222);
     color:white;
+    width:35%;
+    text-align:center;
+    position: relative;
+    left:45%;
+    border-radius: 10px;
 }
 .c-right {
-    width: 260px;
-    padding:20px 10px;
+    width: 90%;
+    padding:20px 5%;
 }
 .myinfo{
-    padding:20px;
+    padding:3%;
     background-color: rgba(42,42,42,1);
     box-shadow: 1px -1px 5px rgb(150,150,150);
 }

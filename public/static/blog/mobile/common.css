@@ -16,9 +16,9 @@
     background-size: 400% 400%;
     animation: gradientBG 5s ease infinite;
 }
-.header,.top-bg,.beian{
+/* .header,.top-bg,.beian{
     min-width: 1200px;
-}
+} */
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -34,16 +34,17 @@
 }
 
 .container {
-    width: 1200px;
+    width: 98%;
     margin: 0 auto;
     justify-content: space-between;
 }
 
 .c-r-box{
-    margin-bottom:20px;
+    margin:0 auto;
+    margin-bottom:10px;
 }
 
-.detail > a ,.beian  a,.header  a{
+.detail > a,.beian  a,.header > a {
     text-decoration: none;
     color:white;
 }

@@ -11,45 +11,36 @@
 		  s.parentNode.insertBefore(hm, s);
 		})();
 	</script>
-		
 	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0">
-	<title>刘刚刚的个人博客</title>
-	<link rel="stylesheet" href="/static/blog/index.css">
-	<link rel="stylesheet" href="/static/blog/base.css">
-	<link rel="stylesheet" href="/static/blog/common.css">
+	<meta name="viewport" content=" initial-scale=1.0">
+	<title>{$detail['title']}-刘刚刚的博客</title>
+	<meta name="keywords" content="{$detail['title']}">
+	<meta name="description" content="{$detail['introduce']}">
+	<meta name="copyright" content="shaoer.cloud版权所有">
+	<link rel="stylesheet" href="/static/blog/mobile/index.css">
+	<link rel="stylesheet" href="/static/blog/mobile/base.css">
+	<link rel="stylesheet" href="/static/blog/mobile/common.css">
+	<link rel="stylesheet" href="/static/blog/github-markdown.min.css">
 </head>
 
 <body>
 	<div class="top-bg"></div>
 	<div class="header text-center bg-black c-white">
-		<h1>刘刚刚的个人博客</h1>
+		<a href="/">刘刚刚的个人博客</a>
 	</div>
-	<div class="container flex">
+	<div class="container">
 		<div class="c-left">
 			<div class="article-list bg-white left-block">
-				<h2><a href="/">最新博文</a></h2>
+				<h1 class="text-center">{$detail['title']}</h1>
 				<hr>
-				{foreach  $list as $key=>$vo}
-					<a href="/detail/{$vo['id']}.html"><h3>{$vo['title']}</h3></a>
-					<div class="flex article-box">
-						<div class="article-left" >
-							<div class="article-img" style="background-image: url(/upload/{$vo['image']})"></div>
-						</div>
-						<div class="article-right flex-column">
-							<div class="introduce ">
-								{$vo['introduce']}
-							</div>
-							<div class="more flex">
-								<div class="info flex">
-									<img src="/static/blog/jitui.png" alt="">
-									<span class="c-gray">{$vo['create_time']}</span>
-								</div>
-								<div class="detail" title="{$vo['title']}"><a href="/detail/{$vo['id']}.html">阅读内容</a></div>
-							</div>
-						</div>
-					</div>
-				{/foreach}
+				<div class="article markdown-body">
+					
+					<div class="article-content flex-column">
+							<i>{$detail['introduce']}</i>
+							<hr>
+							{$html | raw} 
+					</div>		
+				</div>
 			</div>
 
 		</div>
@@ -91,8 +82,17 @@
 		</div>
 		<div id="copyright">©2020-2020 shaoer.cloud</div>
 	</div>
-
 </body>
+<style type="text/css">
+
+
+	.article{
+		padding-top: 20px;
+		min-height: 280px;
+		width:98%;
+		margin:0 auto;
+	}
+</style>
 <script>
 	    window.onload = function(){
 			let startTime = new Date('2020-2-18'); // 开始时间
@@ -102,4 +102,18 @@
 		}
 		
 </script>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https'){
+	   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+	  }
+	  else{
+	  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+	  }
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+	</script>
 </html>
