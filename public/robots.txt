@@ -1,2 +1,3 @@
 User-agent: *
-Disallow:
+Disallow:/bin/
+Sitemap: https://shaoer.cloud/sitemap.xml

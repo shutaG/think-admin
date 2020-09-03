@@ -15,3 +15,4 @@ use think\facade\Route;
 
 
 Route::get('/detail/:id', '/home/index/detail');
+Route::get('/sitemap.xml', '/home/index/sitemap');

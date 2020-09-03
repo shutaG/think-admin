@@ -13,11 +13,20 @@ declare(strict_types=1);
 
 namespace app\home\controller;
 
+use SimpleXMLElement;
 use app\BaseController;
 use think\facade\View;
+use think\facade\Config;
+use think\facade\Request;
 use app\model\BlogArticle;
+use app\model\SpiderLog;
+
+
+
+
 class Index 
 {   
+    protected $request;
 
     private function pageType($vi)
     {
@@ -87,6 +96,32 @@ class Index
     	View::assign('detail',$detail);
     	View::assign('html',$html);
     	return $this->pageType('index/detail');
+    }
+
+    /** 
+     * 生成网站的sitemap
+     */
+    public function sitemap()
+    {   
+        # 记录访问情况
+        $log['agent'] = Request::header('user-agent');
+        $log['ip'] = $_SERVER["REMOTE_ADDR"];
+        SpiderLog::create($log);
+
+        $list = BlogArticle::order('update_time desc')->select();
+        $xml=new SimpleXMLElement('<?xml version="1.0" encoding="utf-8"?><urlset />');
+
+        foreach($list as $vi){
+            $site = 'https://shaoer.cloud/detail/'.$vi['id'].'.html' ;
+            $url=$xml->addchild("url");
+            $tim = explode(' ',$vi['update_time'])[0];
+            // dump($tim); 
+            # 链接地址
+            $url->addchild("loc",$site);
+            # 最后的更新时间
+            $url->addchild("lastmod",$tim);
+        }
+        return xml($xml->asXml());
     }
 
     public function hello($name = 'ThinkPHP6')
