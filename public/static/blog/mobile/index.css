@@ -50,7 +50,8 @@ h3{
 .introduce{
     padding-top: 5px;
     line-height: 1.6rem;
-    color:rgb(100,100,100)
+    color:rgb(100,100,100);
+    word-break:break-all;
 }
 .article-list>h2 {
     font-weight: normal;
