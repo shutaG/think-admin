@@ -90,9 +90,11 @@ class Index
     {	
         $detail = BlogArticle::find($id);
         $keywords = $detail->keywords;
-        $keywords = explode(' ',$keywords);
-        $keywords = implode(',',$keywords);
-        $detail->keywords = $keywords;
+        if ($keywords){
+            $keywords = explode(' ',$keywords);
+            $keywords = implode(',',$keywords);
+            $detail->keywords = $keywords;
+        }
     	//markdown转html
     	$parser = new \HyperDown\Parser;
     	$html = $parser->makeHtml($detail->toArray()['content']);
