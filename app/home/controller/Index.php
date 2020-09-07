@@ -88,8 +88,11 @@ class Index
      */
     public function  detail($id = 1)
     {	
-    	$detail = BlogArticle::find($id);
-
+        $detail = BlogArticle::find($id);
+        $keywords = $detail->keywords;
+        $keywords = explode(' ',$keywords);
+        $keywords = implode(',',$keywords);
+        $detail->keywords = $keywords;
     	//markdown转html
     	$parser = new \HyperDown\Parser;
     	$html = $parser->makeHtml($detail->toArray()['content']);
