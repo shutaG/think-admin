@@ -26,7 +26,7 @@ class Blog extends BaseController
     /**
      * 
      */
-    public function  list($pageNo = 1, $pageSize = 50)
+    public function  list($page = 1, $pageSize = 10)
     {   
         $data = $this->service->paginate($pageSize);
         // $data = $this->log->getList((int) $pageNo, (int) $pageSize);
