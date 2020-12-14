@@ -24,8 +24,8 @@ use app\model\SpiderLog;
 
 
 
-class Index 
-{   
+class Index
+{
     protected $request;
 
     private function pageType($vi)
@@ -75,11 +75,11 @@ class Index
 
 
     public function index()
-    {	
-    	$list = BlogArticle::order('update_time desc')->select();
-    	// dump($list->toArray());
-    	View::assign('list',$list);
-        // return View::fetch('index/index');
+    {
+    	$list = BlogArticle::order('update_time desc')->paginate(8);
+        $page = $list->render();
+        View::assign('list',$list);
+        View::assign('page',$page);
         return $this->pageType('index/index');
     }
 
@@ -87,7 +87,7 @@ class Index
      * 文字详情页
      */
     public function  detail($id = 1)
-    {	
+    {
         $detail = BlogArticle::find($id);
         $keywords = $detail->keywords;
         if ($keywords){
@@ -103,11 +103,11 @@ class Index
     	return $this->pageType('index/detail');
     }
 
-    /** 
+    /**
      * 生成网站的sitemap
      */
     public function sitemap()
-    {   
+    {
         # 记录访问情况
         $log['agent'] = Request::header('user-agent');
         $log['ip'] = $_SERVER["REMOTE_ADDR"];
@@ -120,7 +120,7 @@ class Index
             $site = 'https://shaoer.cloud/detail/'.$vi['id'].'.html' ;
             $url=$xml->addchild("url");
             $tim = explode(' ',$vi['update_time'])[0];
-            // dump($tim); 
+            // dump($tim);
             # 链接地址
             $url->addchild("loc",$site);
             # 最后的更新时间
@@ -130,8 +130,8 @@ class Index
     }
 
     public function hello($name = 'ThinkPHP6')
-    {   
-        
+    {
+
         return 'hello,' . $name;
     }
 }
