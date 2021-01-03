@@ -4,11 +4,11 @@
 <head>
 	<script>
 		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "https://hm.baidu.com/hm.js?7736a1422368b4c8db26825fc6b02c4c";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?7736a1422368b4c8db26825fc6b02c4c";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
 		})();
 	</script>
 	<meta charset="UTF-8">
@@ -20,7 +20,10 @@
 	<link rel="stylesheet" href="/static/blog/index.css">
 	<link rel="stylesheet" href="/static/blog/base.css">
 	<link rel="stylesheet" href="/static/blog/common.css">
+	<link rel="stylesheet" href="/static/blog/mulu.css">
 	<link rel="stylesheet" href="/static/blog/github-markdown.min.css">
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	
 </head>
 
 <body>
@@ -34,11 +37,11 @@
 				<h2 class="text-center">{$detail['title']}</h2>
 				<hr>
 				<div class="article markdown-body">
-					<div class="article-content flex-column">
+					<div id='article' class="article-content flex-column">
 						<i>{$detail['introduce']}</i>
 						<hr>
-							{$html | raw} 
-					</div>		
+						{$html | raw}
+					</div>
 				</div>
 			</div>
 
@@ -50,7 +53,7 @@
 				</div>
 				<div class="myinfo-detail">
 					<p>昵称：shuta</p>
-					<p>职业：后台开发(php)</p>
+					<p>职业：后台开发(python、php)</p>
 					<p>邮箱：648949076@qq.com</p>
 				</div>
 			</div>
@@ -69,7 +72,7 @@
 						<span class="c-gray">ANTD PRO VUE + TP6.0</span>
 					</div>
 					<div>
-						<strong id = "day"class="c-gray"></strong>
+						<strong id="day" class="c-gray"></strong>
 					</div>
 				</div>
 			</div>
@@ -82,38 +85,85 @@
 		<div id="copyright">©2020-2020 shaoer.cloud</div>
 		{include file="../view/home/index/link.html" /}
 	</div>
+	
+	
 </body>
 <style type="text/css">
-
-
-	.article{
+	.article {
 		padding-top: 20px;
 		min-height: 280px;
-		width:98%;
-		margin:0 auto;
+		width: 98%;
+		margin: 0 auto;
 	}
 </style>
 <script>
-	    window.onload = function(){
-			let startTime = new Date('2020-2-18'); // 开始时间
-			let endTime = new Date(); // 结束时间
-			let day = Math.floor((endTime - startTime) / 1000 / 60 / 60 / 24);
-			document.getElementById("day").innerHTML ="站点已运行"+day+"天";
-		}
-		
+	window.onload = function () {
+		let startTime = new Date('2020-2-18'); // 开始时间
+		let endTime = new Date(); // 结束时间
+		let day = Math.floor((endTime - startTime) / 1000 / 60 / 60 / 24);
+		document.getElementById("day").innerHTML = "站点已运行" + day + "天";
+	}
+
+</script>
+<!-- <script src="{% static 'blog/js/script.js' %}"></script> -->
+<script type="text/javascript" src="/static/blog/autoc.min.js"></script>
+
+<script type="text/javascript">
+	// 创建 Outline 实例
+	let navigation = new AutocJs({
+		// 文章正文 DOM 节点的 ID 选择器
+		article: '#article',
+		// 要收集的标题选择器
+		selector: 'h1,h2,h3,h4,h5,h6',
+		// 侧边栏导航的标题
+		title: '文章导读',
+		// 文章导读导航的位置
+		// outside - 以侧边栏菜单形式显示（默认值）
+		// inside - 在文章正文一开始的地方显示
+		position: 'outside',
+		// 标题图标链接的 URL 地址
+		// （默认）没有设置定制，点击链接页面滚动到标题位置
+		// 设置了链接地址，则不会滚动定位
+		anchorURL: '',
+		// 链接的显示位置
+		// front - 在标题最前面（默认值）
+		// back - 在标题后面
+		anchorAt: 'front',
+		// 是否生成文章导读导航
+		isGenerateOutline: true,
+		// 是否在文章导读导航中显示段落章节编号
+		isGenerateOutlineChapterCode: true,
+		// 是否在正文的文章标题中显示段落章节编号
+		isGenerateHeadingChapterCode: false,
+		// 是否在正文的文章标题中创建锚点
+		isGenerateHeadingAnchor: true
+	});
+
 </script>
 <script>
-	(function(){
-		var bp = document.createElement('script');
-		var curProtocol = window.location.protocol.split(':')[0];
-		if (curProtocol === 'https'){
-	   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-	  }
-	  else{
-	  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-	  }
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(bp, s);
-	})();
-	</script>
+	$(".outline-outside-modal").addClass("outline-outside-modal-opened")
+	var time = setTimeout(function () {
+		$(".outline-outside-modal").removeClass("outline-outside-modal-opened")
+	}, 1500);
+	$(".icon_menu").text('目录')
+
+
+
+		(function () {
+			var bp = document.createElement('script');
+			var curProtocol = window.location.protocol.split(':')[0];
+			if (curProtocol === 'https') {
+				bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			}
+			else {
+				bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			}
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(bp, s);
+		})();
+</script>
+
+
+
+
 </html>
